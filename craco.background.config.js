@@ -1,12 +1,13 @@
 // https://www.npmjs.com/package/@craco/craco
-// const path = require('path');
-// const fs = require('fs');
-// const appDirectory = fs.realpathSync(process.cwd());
-// const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const path = require("path");
+const fs = require("fs");
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 
 module.exports = {
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
+      paths.appBuild = resolveApp("dist");
       return {
         target: "web",
         resolve: {
@@ -21,7 +22,6 @@ module.exports = {
         },
         output: {
           filename: "[name].js",
-          // path: resolveApp("dist"),
         },
         optimization: {
           runtimeChunk: false,

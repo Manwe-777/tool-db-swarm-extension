@@ -1,0 +1,17 @@
+{
+  "name": "Strong Password Generator",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Strong password generator",
+  "icons": {
+    "512": "logo512.png"
+  },
+  "browser_action": {
+    "default_icon": "logo512.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}

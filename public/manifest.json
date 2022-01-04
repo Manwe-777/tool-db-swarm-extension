@@ -1,8 +1,8 @@
 {
-  "name": "Strong Password Generator",
+  "name": "Awesome decentralized server extension",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Strong password generator",
+  "description": "Awesome decentralized server extension",
   "icons": {
     "512": "logo512.png"
   },

@@ -22,8 +22,9 @@
   "scripts": {
     "watch": "npm-watch",
     "start": "craco start",
+    "build:app": "react-scripts build",
     "build:background": "craco build --config craco.background.config.js",
-    "build": "set INLINE_RUNTIME_CHUNK=false && set GENERATE_SOURCEMAP=false && react-scripts build && node after-build.js && npm run build:background",
+    "build": "set INLINE_RUNTIME_CHUNK=false && set GENERATE_SOURCEMAP=false && npm run build:background && npm run build:app && node after-build.js",
     "test": "craco test",
     "eject": "craco eject"
   },

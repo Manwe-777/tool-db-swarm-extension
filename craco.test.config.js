@@ -1,4 +1,4 @@
-// const webpack = require("webpack");
+const webpack = require("webpack");
  
 // https://www.npmjs.com/package/@craco/craco
 module.exports = {

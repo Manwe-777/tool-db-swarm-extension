@@ -1,4 +1,5 @@
 // https://www.npmjs.com/package/@craco/craco
+const webpack = require("webpack");
 const path = require("path");
 const fs = require("fs");
 const appDirectory = fs.realpathSync(process.cwd());
@@ -18,7 +19,7 @@ module.exports = {
           },
         },
         entry: {
-          background: "./background/background.js",
+          background: "./src/background/background.js",
         },
         output: {
           filename: "[name].js",
@@ -26,6 +27,11 @@ module.exports = {
         optimization: {
           runtimeChunk: false,
         },
+        plugins: [
+          new webpack.ProvidePlugin({
+            process: "process/browser",
+          }),
+        ],
       };
     },
   },

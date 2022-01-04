@@ -4,16 +4,14 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    // 
+    //
   });
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Save to reload.
-        </p>
+        <p>Save to reload.</p>
         <a
           className="App-link"
           href="https://reactjs.org"

@@ -10,7 +10,7 @@ fs.rename(
 );
 
 fs.rename(
-  __dirname + "/dist/background.js",
+  __dirname + "/background.js",
   __dirname + "/build/background.js",
   () => {
     console.log("Background moved OK");

@@ -11,6 +11,11 @@
 # production
 /build
 /dist
+/out
+
+background.js
+background-ts.js
+
 
 # misc
 .DS_Store

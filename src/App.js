@@ -1,21 +1,28 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [peers, setPeers] = useState(0);
+
+  useEffect(() => {
+    window.broadcastChannel.onmessage = (msg) => {
+      if (msg.data.type === "SET_PEERS") {
+        setPeers(msg.data.peers);
+      }
+    };
+    setInterval(() => {
+      window.broadcastChannel.postMessage({
+        type: "GET_PEERS",
+      });
+    }, 500);
+  });
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Save to reload.</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{peers} peers connected.</p>
       </header>
     </div>
   );
